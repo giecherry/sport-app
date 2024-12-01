@@ -1,14 +1,16 @@
 import { useState } from "react";
 
 const TeamLists = () => {
-const [teamAPlayers, setTeamAPlayers] = useState([
+
+const [teamAPlayers, setTeamAPlayers] = localStorage.getItem("Team A Players list") ? useState(JSON.parse(localStorage.getItem("Team A Players list"))) :  useState([
     { username: "Player-1", id: 1 },
     { username: "Player-2", id: 2 },
     { username: "Player-3", id: 3 },
     { username: "Player-4", id: 4 },
     { username: "Player-5", id: 5 }
 ]);
-const [teamBPlayers, setTeamBPlayers] = useState([
+
+const [teamBPlayers, setTeamBPlayers] = localStorage.getItem("Team B Players list") ? useState(JSON.parse(localStorage.getItem("Team B Players list"))) : useState([
     { username: "Player-6", id: 6 },
     { username: "Player-7", id: 7 },
     { username: "Player-8", id: 8 },
